@@ -19,13 +19,13 @@ const SkillsSection = () => {
       title: "Database Management",
       icon: "💾",
       color: "bg-yellow-500/10 text-yellow-500",
-      skills: ["MongoDB", "Mongoose", "SQL Fundamentals", "Firebase"]
+      skills: ["MongoDB", "Mongoose", "Database Design", "Data Modeling"]
     },
     {
       title: "Core CS & Tools",
       icon: "🛠️",
       color: "bg-pink-500/10 text-pink-500",
-      skills: ["Data Structures (DSA)", "CS Fundamentals", "Git & GitHub", "Postman"]
+      skills: [ "Git & GitHub", "Thunder Client",  ]
     }
   ];
 

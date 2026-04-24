@@ -1,124 +1,125 @@
 import React, { useState } from "react";
+import { FaLinkedin, FaGithub } from "react-icons/fa";
+import { motion } from "framer-motion";
 
 function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
 
+  // Animation Variants
+  const fadeInUp = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
+  };
+
+  const staggerContainer = {
+    visible: { transition: { staggerChildren: 0.2 } }
+  };
+
   return (
-    /* Added min-h-screen to ensure full height */
-    <div className="bg-gray-900 min-h-screen text-white selection:bg-indigo-500">
-      
+    <div className="bg-gray-900 min-h-screen text-white selection:bg-indigo-500 overflow-x-hidden">
+
       {/* HEADER */}
       <header className="absolute inset-x-0 top-0 z-50">
         <nav className="flex items-center justify-between p-6 lg:px-8">
-          
-          {/* LOGO */}
-          <div className="flex lg:flex-1">
-            <a href="#" className="-m-1.5 p-1.5">
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            className="flex lg:flex-1"
+          >
+            <a to="#" className="-m-1.5 p-1.5">
               <h3 className="text-xl font-bold tracking-tight">
-                Divya <span className="text-indigo-500">Joshi</span>
+                Divya<span className="text-indigo-500">Joshi</span>
               </h3>
             </a>
-          </div>
+          </motion.div>
 
-          {/* MOBILE MENU BUTTON */}
           <div className="flex lg:hidden">
-            <button
-              onClick={() => setMenuOpen(true)}
-              className="-m-2.5 p-2.5 text-gray-200 text-2xl"
-            >
+            <button onClick={() => setMenuOpen(true)} className="-m-2.5 p-2.5 text-gray-200 text-2xl">
               ☰
             </button>
           </div>
 
-          {/* DESKTOP MENU */}
-          <div className="hidden lg:flex lg:gap-x-12">
-            <a href="#" className="text-sm font-semibold hover:text-indigo-400 transition">Home</a>
-            <a href="#" className="text-sm font-semibold hover:text-indigo-400 transition">About</a>
-            <a href="#" className="text-sm font-semibold hover:text-indigo-400 transition">Projects</a>
-            <a href="#" className="text-sm font-semibold hover:text-indigo-400 transition">Contact</a>
-          </div>
+          <motion.div
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="hidden lg:flex lg:gap-x-12"
+          >
+            {["Home", "About", "Projects", "Contact"].map((item) => (
+              <a key={item} to={`#${item.toLowerCase()}`} className="text-sm font-semibold hover:text-indigo-400 transition">
+                {item}
+              </a>
+            ))}
+          </motion.div>
         </nav>
-
-        {/* MOBILE MENU */}
-        {menuOpen && (
-          <div className="fixed inset-0 z-50 bg-gray-900 p-6 flex flex-col">
-            <div className="flex justify-between items-center">
-              <h3 className="text-xl font-bold">Divya <span className="text-indigo-500">Joshi</span></h3>
-              <button
-                onClick={() => setMenuOpen(false)}
-                className="text-white text-3xl"
-              >
-                ✕
-              </button>
-            </div>
-            <div className="mt-10 flex flex-col gap-6 text-xl">
-              <a href="#" onClick={() => setMenuOpen(false)}>Home</a>
-              <a href="#" onClick={() => setMenuOpen(false)}>About</a>
-              <a href="#" onClick={() => setMenuOpen(false)}>Projects</a>
-              <a href="#" onClick={() => setMenuOpen(false)}>Contact</a>
-            </div>
-          </div>
-        )}
       </header>
 
-      {/* HERO SECTION - Centered using Flex and min-h-screen */}
+      {/* HERO SECTION */}
       <div className="relative isolate flex flex-col items-center justify-center min-h-screen px-6 pt-14 lg:px-8">
 
-        {/* TOP GRADIENT */}
-        <div aria-hidden="true" className="absolute inset-x-0 -top-40 -z-10 blur-3xl pointer-events-none">
+        {/* Background Gradients (Animated) */}
+        <motion.div
+          animate={{ scale: [1, 1.1, 1], opacity: [0.2, 0.3, 0.2] }}
+          transition={{ duration: 8, repeat: Infinity }}
+          className="absolute inset-x-0 -top-40 -z-10 blur-3xl pointer-events-none"
+        >
           <div
-            style={{
-              clipPath: "polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)",
-            }}
+            style={{ clipPath: "polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)" }}
             className="mx-auto w-[36rem] h-[20rem] bg-gradient-to-tr from-pink-500 to-indigo-500 opacity-20"
           />
-        </div>
+        </motion.div>
 
-        {/* CONTENT */}
-        <div className="mx-auto max-w-3xl text-center">
-          
-          {/* PROFILE IMAGE FROM UNSPLASH */}
-          <div className="mb-8 flex justify-center">
-            <img 
-              src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=300&q=80" 
-              alt="Developer Workspace" 
+        {/* CONTENT AREa  */}
+        <motion.div
+          initial="hidden"
+          animate="visible"
+          variants={staggerContainer}
+          className="mx-auto max-w-3xl text-center"
+        >
+          {/* PROFILE IMAGE */}
+          <motion.div variants={fadeInUp} className="mb-8 flex justify-center">
+            <img
+              src="https://cdn.pixabay.com/photo/2024/02/17/16/08/ai-generated-8579695_1280.jpg"
+              alt="Divya Joshi"
               className="rounded-full w-32 h-32 object-cover border-4 border-indigo-500 shadow-xl"
             />
-          </div>
+          </motion.div>
 
-          <h1 className="text-5xl font-bold text-white sm:text-7xl tracking-tight">
-            Hi, I'm Divya Joshi👋
-          </h1>
+          <motion.h1 variants={fadeInUp} className="text-5xl font-bold text-white sm:text-7xl tracking-tight">
+            Hi, I'm Divya Joshi
+          </motion.h1>
 
-          <p className="mt-6 text-lg leading-8 text-gray-400 sm:text-xl max-w-2xl mx-auto">
-            MSc Computer Science | MERN Stack Developer <br/>
+          <motion.p variants={fadeInUp} className="mt-6 text-lg leading-8 text-gray-400 sm:text-xl max-w-2xl mx-auto">
+            MSc Computer Science | MERN Stack Developer <br />
             Building robust web applications with modern technologies.
-          </p>
+          </motion.p>
 
-          <div className="mt-10 flex items-center justify-center gap-x-6">
-            <a
-              href="#"
-              className="bg-indigo-600 px-6 py-3 rounded-full text-white font-bold shadow-lg hover:bg-indigo-500 transition-all hover:scale-105"
-            >
-              View Projects
+          <motion.div variants={fadeInUp} className="mt-10 flex items-center justify-center gap-x-4 sm:gap-x-6">
+            <a to="/DivyaJoshi_CV.pdf" target="_blank" className="bg-indigo-600 px-6 py-3 rounded-full text-white font-bold shadow-lg hover:bg-indigo-500 transition-all hover:scale-105">
+              Download CV
             </a>
 
-            <a href="#" className="text-white font-semibold hover:text-indigo-400 transition">
-              Contact Me <span aria-hidden="true">→</span>
+            <a to="#contact" className="bg-gray-800 px-6 py-3 rounded-full text-white font-semibold hover:text-indigo-400 transition">
+              Contact Me <span>→</span>
             </a>
-          </div>
-        </div>
 
-        {/* BOTTOM GRADIENT */}
-        <div aria-hidden="true" className="absolute inset-x-0 bottom-0 -z-10 blur-3xl pointer-events-none">
-          <div
-            style={{
-              clipPath: "polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)",
-            }}
-            className="mx-auto w-[36rem] h-[20rem] bg-gradient-to-tr from-indigo-500 to-pink-500 opacity-20"
-          />
-        </div>
-
+            {/* Social Icons with Hover motion */}
+            {[
+              { icon: <FaLinkedin size={20} />, to: "https://linkedin.com/in/divyajoshi-dev", color: "hover:text-indigo-500" },
+              { icon: <FaGithub size={20} />, to: "https://github.com/divyajoshi01", color: "hover:text-white" }
+            ].map((social, index) => (
+              <motion.a
+                key={index}
+                whileHover={{ scale: 1.2, rotate: 5 }}
+                whileTap={{ scale: 0.9 }}
+                to={social.to}
+                target="_blank"
+                className={`bg-gray-800 w-12 h-12 rounded-full flex items-center justify-center text-white ${social.color} transition-colors shadow-md`}
+              >
+                {social.icon}
+              </motion.a>
+            ))}
+          </motion.div>
+        </motion.div>
       </div>
     </div>
   );

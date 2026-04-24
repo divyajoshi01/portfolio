@@ -3,12 +3,16 @@ import Home from './components/Home'
 import About from './components/About'
 import SkillsSection from './components/SkillsSection'
 import Footer from './components/Footer'
+import Contact from './components/Contact'
+import Projects from './components/Projects'
 function App() {
   return (
     <>
      <Home/> 
      <About/>
      <SkillsSection/>
+      <Projects/>
+      <Contact/> 
      <Footer/>
      
     </>
