@@ -2,7 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 
 const Projects = () => {
-  // Project Data Array - Isme aap naye projects asani se add kar sakte hain
+ 
   const projects = [
    
     {

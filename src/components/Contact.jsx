@@ -4,7 +4,7 @@ import { IoMail } from 'react-icons/io5'
 
 const Contact = () => {
   return (
-    <div className="bg-[#0f172a] text-white min-h-screen flex items-center justify-center p-6">
+    <div  id='contact' className="bg-[#0f172a] text-white min-h-screen flex items-center justify-center p-6">
       <div className="max-w-6xl w-full grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
 
         {/* Left Side: Contact Info */}

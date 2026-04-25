@@ -5,9 +5,11 @@ import SkillsSection from './components/SkillsSection'
 import Footer from './components/Footer'
 import Contact from './components/Contact'
 import Projects from './components/Projects'
+import Navbar from './components/Navbar'
 function App() {
   return (
     <>
+    <Navbar/>
      <Home/> 
      <About/>
      <SkillsSection/>
@@ -19,4 +21,4 @@ function App() {
   )
 }
 
-export default App
+export default App;
