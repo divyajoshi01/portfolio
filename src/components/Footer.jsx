@@ -19,29 +19,28 @@ function Footer() {
               MERN Stack Developer
             </p>
           </div>
-
           {/* CENTER: NAV aS */}
           <div className="flex-1 flex justify-center">
             <div className="flex flex-wrap justify-center gap-6 text-sm font-medium">
-              <a to="#about" className="hover:text-indigo-400 transition-colors duration-300">About</a>
-              <a to="#projects" className="hover:text-indigo-400 transition-colors duration-300">Projects</a>
-              <a to="#skills" className="hover:text-indigo-400 transition-colors duration-300">Skills</a>
-              <a to="#contact" className="hover:text-indigo-400 transition-colors duration-300">Contact</a>
+              <a href="#about" className="hover:text-indigo-400 transition-colors duration-300">About</a>
+              <a href="#projects" className="hover:text-indigo-400 transition-colors duration-300">Projects</a>
+              <a href="#skills" className="hover:text-indigo-400 transition-colors duration-300">Skills</a>
+              <a href="#contact" className="hover:text-indigo-400 transition-colors duration-300">Contact</a>
             </div>
           </div>
 
           {/* RIGHT: SOCIAL ICONS */}
           <div className="flex-1 flex justify-center md:justify-end gap-6 text-xl">
-            <a to="https://www.linkedin.com/in/divyajoshi-dev" target="_blank" rel="noreferrer" className="hover:text-indigo-500 hover:scale-125 transition-all duration-300 transform">
+            <a href="https://www.linkedin.com/in/divyajoshi-dev" target="_blank" rel="noreferrer" className="hover:text-indigo-500 hover:scale-125 transition-all duration-300 transform">
               <FaLinkedin />
             </a>
-            <a to="https://github.com/divyajoshi01" target="_blank" rel="noreferrer" className="hover:text-white hover:scale-125 transition-all duration-300 transform">
+            <a href="https://github.com/divyajoshi01" target="_blank" rel="noreferrer" className="hover:text-white hover:scale-125 transition-all duration-300 transform">
               <FaGithub />
             </a>
-            <a to="https://www.instagram.com/bestofdivya/" target="_blank" rel="noreferrer" className="hover:text-pink-500 hover:scale-125 transition-all duration-300 transform">
+            <a href="https://www.instagram.com/bestofdivya/" target="_blank" rel="noreferrer" className="hover:text-pink-500 hover:scale-125 transition-all duration-300 transform">
               <FaInstagram />
             </a>
-            <a to="https://www.facebook.com/bestofdivyaa" target="_blank" rel="noreferrer" className="hover:text-blue-500 hover:scale-125 transition-all duration-300 transform">
+            <a href="https://www.facebook.com/bestofdivyaa" target="_blank" rel="noreferrer" className="hover:text-blue-500 hover:scale-125 transition-all duration-300 transform">
               <FaFacebook />
             </a>
           </div>
