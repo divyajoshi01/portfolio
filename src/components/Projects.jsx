@@ -20,6 +20,14 @@ const Projects = () => {
       image: "image/Screenshot 2025-11-10 091420.png",
       link: "#",
       tags: ["Tailwind", "Portfolio"]
+    },
+    {
+      id: 4,
+      title: "Safe_Home",
+      description: "A web application focused on pg booking app.",
+      image: "image/safehome.jpeg",
+      link: "#",
+      tags: ["React","Express","TailwindCSS", "MongoDB"]
     }
   ];
 
