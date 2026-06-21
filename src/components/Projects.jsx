@@ -17,7 +17,7 @@ const Projects = () => {
       id: 3,
       title: "Portfolio Website",
       description: "This personal website is built with React and Tailwind CSS.",
-      image: "image/Screenshot 2025-11-10 091420.png",
+      image: "portfolio.png",
       link: "#",
       tags: ["Tailwind", "Portfolio"]
     },
@@ -25,7 +25,7 @@ const Projects = () => {
       id: 4,
       title: "Safe_Home",
       description: "A web application focused on pg booking app.",
-      image: "image/safehome.jpeg",
+      image: "safeHome.png",
       link: "#",
       tags: ["React","Express","TailwindCSS", "MongoDB"]
     }

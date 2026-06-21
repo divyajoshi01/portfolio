@@ -42,7 +42,7 @@ const Contact = () => {
         {/* Right Side: Form */}
         <form className="grid grid-cols-1 sm:grid-cols-2 gap-6" onSubmit={(e) => e.preventDefault()}>
           <div className="flex flex-col gap-2">
-            <label className="text-sm font-semibold">First name</label>
+            <label className="text-sm font-semibold">First name <span className="text-red-500">*</span></label>
             <input
               type="text"
               placeholder="First name"
@@ -51,7 +51,7 @@ const Contact = () => {
           </div>
 
           <div className="flex flex-col gap-2">
-            <label className="text-sm font-semibold">Last name</label>
+            <label className="text-sm font-semibold">Last name <span className="text-red-500">*</span></label>
             <input
               type="text"
               placeholder="Last name"
@@ -60,25 +60,17 @@ const Contact = () => {
           </div>
 
           <div className="flex flex-col gap-2 sm:col-span-2">
-            <label className="text-sm font-semibold">Email</label>
+            <label className="text-sm font-semibold">Email <span className="text-red-500">*</span></label>
             <input
               type="email"
               placeholder="Email"
               className="bg-white/5 border border-white/10 rounded-md p-3 focus:outline-none focus:ring-2 focus:ring-indigo-500 transition placeholder:text-gray-600"
             />
           </div>
+           
 
           <div className="flex flex-col gap-2 sm:col-span-2">
-            <label className="text-sm font-semibold">Phone number</label>
-            <input
-              type="tel"
-              placeholder="Phone number"
-              className="bg-white/5 border border-white/10 rounded-md p-3 focus:outline-none focus:ring-2 focus:ring-indigo-500 transition placeholder:text-gray-600"
-            />
-          </div>
-
-          <div className="flex flex-col gap-2 sm:col-span-2">
-            <label className="text-sm font-semibold">Message</label>
+            <label className="text-sm font-semibold">Message <span className="text-red-500">*</span></label>
             <textarea
               rows="4"
               placeholder="Your message..."
