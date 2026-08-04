@@ -2,19 +2,12 @@ import React from "react";
 import { motion } from "framer-motion";
 
 const Projects = () => {
- 
+
   const projects = [
-   
+
+
     {
       id: 2,
-      title: "To-Do App",
-      description: "A simple and clean to-do list app with full CRUD functionality using JavaScript.",
-      image: "image/todo.jpeg",
-      link: "#",
-      tags: ["CRUD", "React"]
-    },
-    {
-      id: 3,
       title: "Portfolio Website",
       description: "This personal website is built with React and Tailwind CSS.",
       image: "portfolio.png",
@@ -22,22 +15,31 @@ const Projects = () => {
       tags: ["Tailwind", "Portfolio"]
     },
     {
+      id: 3,
+      title: "EduAssess - Online Exam Portal",
+      description: "A full-stack online exam portal built with MERN stack. It includes student and teacher dashboards, exam creation, question management, test attempts, and result tracking.",
+      image: "edu_assess.png",
+      link: "https://edu-assess-o3ap.vercel.app/",
+      tags: ["MERN", "React", "Node.js", "MongoDB", "JWT"]
+
+    },
+    {
       id: 4,
       title: "Safe_Home",
       description: "A web application focused on pg booking app.",
       image: "safeHome.png",
       link: "#",
-      tags: ["React","Express","TailwindCSS", "MongoDB"]
+      tags: ["React", "Express", "TailwindCSS", "MongoDB"]
     }
   ];
 
   return (
     <section id="projects" className="bg-gray-900 py-20 px-6 lg:px-20">
       <div className="max-w-7xl mx-auto">
-        
+
         {/* Section Header */}
         <div className="text-center mb-16">
-          <motion.h2 
+          <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -45,15 +47,15 @@ const Projects = () => {
           >
             About This <span className="text-indigo-500">Project</span>
           </motion.h2>
-          <motion.p 
+          <motion.p
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
             className="text-gray-400 max-w-2xl mx-auto text-lg"
           >
-            I'm <span className="text-white font-semibold">Divya Joshi</span>. 
-            The projects below dynamically generate responsive cards that display 
+            I'm <span className="text-white font-semibold">Divya Joshi</span>.
+            The projects below dynamically generate responsive cards that display
             details in a clean and user-friendly layout.
           </motion.p>
           <div className="h-1.5 w-20 bg-indigo-500 rounded-full mx-auto mt-6"></div>
@@ -90,17 +92,19 @@ const Projects = () => {
                     </span>
                   ))}
                 </div>
-                
+
                 <h3 className="text-xl font-bold text-white mb-2 group-hover:text-indigo-400 transition-colors">
                   {project.title}
                 </h3>
-                
+
                 <p className="text-gray-400 text-sm leading-relaxed mb-6">
                   {project.description}
                 </p>
 
                 <a
                   href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-flex items-center text-sm font-semibold text-white bg-indigo-600 hover:bg-indigo-700 px-5 py-2.5 rounded-xl transition-all active:scale-95"
                 >
                   View Project

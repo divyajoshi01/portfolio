@@ -119,10 +119,10 @@ return (
             ></textarea>
           </div>
 
-          <div className="sm:col-span-2 flex justify-end">
+          <div className="sm:col-span-2 flex justify-center">
             <button
               type="submit"
-              className="bg-[#6366f1] hover:bg-[#4f46e5] text-white font-bold py-3 px-8 rounded-lg transition duration-300 shadow-lg cursor-pointer disabled:cursor-not-allowed"
+              className="bg-[#6366f1] hover:bg-[#4f46e5] text-white font-bold py-3 px-10 rounded-[32px] transition duration-300 shadow-lg cursor-pointer disabled:cursor-not-allowed"
             >
               Send message
             </button>
